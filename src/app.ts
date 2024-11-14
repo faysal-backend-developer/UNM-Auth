@@ -6,7 +6,7 @@ const app: Application = express();
 // Express default Middleware configuration--
 app.use(express.json());
 app.use(
-  express.\urlencoded({
+  express.urlencoded({
     extended: true,
   }),
 );
