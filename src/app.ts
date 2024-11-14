@@ -17,10 +17,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Test Api endpoints configuration--
-app.get('/api/v1/', (req: Request, res: Response) => {
-  res.send({
-    message: 'Welcome To Express Server',
-  });
-});
+app.get(
+  '/api/v1/',
+
+  (req: Request, res: Response) => {
+    res.send({
+      message: 'Welcome To Express Server',
+    });
+  },
+);
 
 export default app;
