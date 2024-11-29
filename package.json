@@ -10,9 +10,9 @@
     "lint:format": "yarn lint:check && yarn format",
     "prepare": "husky"
   },
-    "lint-staged": {
-      "src/**/*.ts": "yarn lint:check && yarn format"
-    },
+  "lint-staged": {
+    "src/**/*.ts": "yarn lint:check && yarn format"
+  },
   "dependencies": {
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
