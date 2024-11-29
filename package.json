@@ -5,13 +5,13 @@
   "license": "MIT",
   "scripts": {
     "dev:start": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "lint:check": "eslint . ",
+    "lint:check": "eslint .",
     "format": "yarn prettier . --write",
     "lint:format": "yarn lint:check && yarn format",
     "prepare": "husky"
   },
   "lint-staged": {
-    "src/**/*.ts": "yarn lint:check && yarn format"
+    "src/**/*.ts": "yarn lint:format"
   },
   "dependencies": {
     "body-parser": "^1.20.3",
