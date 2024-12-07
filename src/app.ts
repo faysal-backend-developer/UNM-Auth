@@ -14,9 +14,14 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// test Api Create :
+// Home Page API:
 app.get('/api/v1/home', (req: Request, res: Response) => {
   res.send('Welcome to University Management Server...');
+});
+
+// Test Router for Testing Server
+app.get('/api/v1/test', (req: Request, res: Response) => {
+  res.send('Test API is working fine...');
 });
 
 // Export App
