@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // test Api Create :
 app.get('/api/v1/home', (req: Request, res: Response) => {
-  res.send('Welcome to home page');
+  res.send('Welcome to University Management Server...');
 });
 
 // Export App
