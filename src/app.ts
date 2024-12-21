@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 
@@ -20,8 +20,11 @@ app.get('/api/v1/home', (req: Request, res: Response) => {
 });
 
 // Test Router for Testing Server
-app.get('/api/v1/test', (req: Request, res: Response) => {
-  res.send('Test API is working fine...');
+app.get('/api/v1/test', (req: Request, res: Response, next: NextFunction) => {
+  res.send('Testing Server Test Request');
+  // Write the Testing Function to the Response
+
+  next();
 });
 
 // Export App
