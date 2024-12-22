@@ -1,6 +1,7 @@
 import app from './app';
 import config from './config';
 import dbConnection from './db';
+import { errorLogger, logger } from './utils/winston/logger';
 
 const run = async () => {
   try {
@@ -9,11 +10,11 @@ const run = async () => {
       config.port,
 
       () => {
-        console.log(`listening on ${config.port}`);
+        logger.info('Server is listening');
       },
     );
   } catch (error) {
-    console.log(error);
+    errorLogger.error(error);
   }
 };
 

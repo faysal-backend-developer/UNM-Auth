@@ -1,0 +1,78 @@
+{
+  message: 'Connected to mongodb://localhost:27017/UNM-Auth',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:41:10.648Z'
+}
+{
+  message: 'Server is listening',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:41:10.654Z'
+}
+{
+  message: 'Connected to mongodb://localhost:27017/UNM-Auth',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:41:44.948Z'
+}
+{
+  message: 'Server is listening',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:41:44.953Z'
+}
+{
+  message: 'Connected to mongodb://localhost:27017/UNM-Auth',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:41:45.633Z'
+}
+{
+  message: 'Server is listening',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:41:45.638Z'
+}
+{
+  message: 'Connected to mongodb://localhost:27017/UNM-Auth',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:42:04.263Z'
+}
+{
+  message: 'Server is listening',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:42:04.268Z'
+}
+{
+  message: 'Connected to mongodb://localhost:27017/UNM-Auth',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:42:05.399Z'
+}
+{
+  message: 'Server is listening',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:42:05.403Z'
+}
+{
+  message: 'Server is listening',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:42:19.189Z'
+}
+{
+  message: 'Connected to mongodb://localhost:27017/UNM-Auth',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:42:51.938Z'
+}
+{
+  message: 'Server is listening',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:42:51.943Z'
+}

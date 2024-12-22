@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/.fe5a539049acce4f9d72dce90bcdaaa79a66e10b-audit.json",
+    "files": [
+        {
+            "date": 1734842470552,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/UNM-2024-12-22-10.log",
+            "hash": "9c4fe3cbcb9f728f0c07407d0e92882a7948007b814e5a6a15b4545d5ab1ba22"
+        }
+    ],
+    "hashType": "sha256"
+}

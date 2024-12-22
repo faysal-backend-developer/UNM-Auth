@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
+import { errorLogger, logger } from '../utils/winston/logger';
 
 const dbConnection = async (url: string): Promise<void> => {
   try {
     await mongoose.connect(url as string);
-    console.log(`Connected to ${url}`);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    logger.info(`Connected to ${url}`);
   } catch (error) {
-    console.log(`Failed to connect to`);
+    errorLogger.error(`Failed to connect to`, error);
   }
 };
 
