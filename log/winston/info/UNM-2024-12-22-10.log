@@ -76,3 +76,15 @@
   label: 'right meow!',
   timestamp: '2024-12-22T04:42:51.943Z'
 }
+{
+  message: 'Connected to mongodb://localhost:27017/UNM-Auth',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:43:22.813Z'
+}
+{
+  message: 'Server is listening',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2024-12-22T04:43:22.818Z'
+}

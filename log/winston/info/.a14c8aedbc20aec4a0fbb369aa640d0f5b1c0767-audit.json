@@ -1,15 +1,15 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
-    },
-    "auditLog": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/.a14c8aedbc20aec4a0fbb369aa640d0f5b1c0767-audit.json",
-    "files": [
-        {
-            "date": 1734842470548,
-            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2024-12-22-10.log",
-            "hash": "e383ea311851449237318dfeabc5c2aaddb4b7e7f6303a183f65614c97d1b453"
-        }
-    ],
-    "hashType": "sha256"
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/.a14c8aedbc20aec4a0fbb369aa640d0f5b1c0767-audit.json",
+  "files": [
+    {
+      "date": 1734842470548,
+      "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2024-12-22-10.log",
+      "hash": "e383ea311851449237318dfeabc5c2aaddb4b7e7f6303a183f65614c97d1b453"
+    }
+  ],
+  "hashType": "sha256"
 }
