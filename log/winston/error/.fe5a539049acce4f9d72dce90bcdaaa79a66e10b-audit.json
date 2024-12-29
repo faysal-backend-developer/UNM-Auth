@@ -1,15 +1,40 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 14
-  },
-  "auditLog": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/.fe5a539049acce4f9d72dce90bcdaaa79a66e10b-audit.json",
-  "files": [
-    {
-      "date": 1734842470552,
-      "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/UNM-2024-12-22-10.log",
-      "hash": "9c4fe3cbcb9f728f0c07407d0e92882a7948007b814e5a6a15b4545d5ab1ba22"
-    }
-  ],
-  "hashType": "sha256"
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/.fe5a539049acce4f9d72dce90bcdaaa79a66e10b-audit.json",
+    "files": [
+        {
+            "date": 1734842470552,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/UNM-2024-12-22-10.log",
+            "hash": "9c4fe3cbcb9f728f0c07407d0e92882a7948007b814e5a6a15b4545d5ab1ba22"
+        },
+        {
+            "date": 1735447949170,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/UNM-2024-12-29-10.log",
+            "hash": "d2a99b8b991f3752204135af0c595d27d71b1f255895a2dc74fdce7145de71bf"
+        },
+        {
+            "date": 1735448405162,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/UNM-2024-12-29-11.log",
+            "hash": "5d6959d32cfdc93c6818c244ad6fc0922fd9082788accdba90e6c3d575e5f568"
+        },
+        {
+            "date": 1735452608561,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/UNM-2024-12-29-12.log",
+            "hash": "60c89e59be7a73efb86de008097167d93bfc59c27943cf0fa762e35945667044"
+        },
+        {
+            "date": 1735456328069,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/UNM-2024-12-29-13.log",
+            "hash": "11503f0720c79d710c331f6d2911e7cb06d4e64110cb93e4229135b6281bd7a9"
+        },
+        {
+            "date": 1735459455561,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/UNM-2024-12-29-14.log",
+            "hash": "fe065fb70bb7e3cd4c662542cf5afd658aca8320c804525d54293cb5944ce30e"
+        }
+    ],
+    "hashType": "sha256"
 }

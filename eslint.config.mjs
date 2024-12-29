@@ -12,7 +12,7 @@ export default [
       eqeqeq: 'off',
       'no-unused-vars': 'error',
       'prefer-const': ['error', { ignoreReadBeforeAssign: true }],
-      'no-console': 'error',
+      'no-console': 'warn',
       'no-undef': 'error',
     },
   },

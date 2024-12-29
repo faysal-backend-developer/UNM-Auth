@@ -2,6 +2,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import rootRouter from './app/modules/routers';
+import globalErrorHandler from './app/globalErrorHandler/globalErrorHandler';
 // import { findLastUserId } from './app/modules/Users/Users.utils';
 
 // Create app
@@ -35,6 +36,9 @@ app.get(
     next();
   },
 );
+
+// Global Error Handler
+app.use(globalErrorHandler);
 
 // Export App
 export default app;
