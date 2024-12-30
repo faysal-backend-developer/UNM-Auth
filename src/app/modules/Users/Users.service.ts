@@ -1,4 +1,6 @@
+import { StatusCodes } from 'http-status-codes';
 import config from '../../../config';
+import ApiError from '../../globalErrorHandler/ApiError';
 import { IUser } from './Users.interface';
 import { User } from './Users.model';
 import { generatedUserId } from './Users.utils';
@@ -13,7 +15,7 @@ const createUser = async (payload: IUser): Promise<IUser | null> => {
   const createdUser = await User.create(payload);
 
   if (!createdUser) {
-    throw new Error('User creation failed');
+    throw new ApiError(StatusCodes.BAD_REQUEST, 'User creation failed');
   }
 
   return createdUser;

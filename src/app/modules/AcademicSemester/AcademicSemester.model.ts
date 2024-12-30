@@ -7,8 +7,9 @@ import {
   MonthEnum,
   SemesterCode,
   SemesterTitle,
-} from './AcademicSemester.contant';
+} from './AcademicSemester.constant';
 import ApiError from '../../globalErrorHandler/ApiError';
+import { StatusCodes } from 'http-status-codes';
 
 const academicSemesterSchema = new Schema<IAcademicSemester>(
   {
@@ -49,9 +50,8 @@ academicSemesterSchema.pre('save', async function (next) {
     title: this.title,
     year: this.year,
   });
-
   if (isExist) {
-    throw new ApiError(409, 'Conflicting data');
+    throw new ApiError(StatusCodes.CONFLICT, 'Semester already exists');
   }
 
   next();
