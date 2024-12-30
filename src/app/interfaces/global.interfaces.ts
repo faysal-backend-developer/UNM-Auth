@@ -1,5 +1,5 @@
 export type IGenericErrorMessage = {
-  path: string;
+  path: string | number;
   message: string;
 };
 
@@ -7,7 +7,7 @@ export type IGenericErrorResponse = {
   statusCode: number;
   message: string;
   errorMessage: {
-    path: string;
+    path: string | number;
     message: string;
   }[];
 };

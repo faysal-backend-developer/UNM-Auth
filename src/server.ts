@@ -37,9 +37,9 @@ const run = async () => {
 
 run();
 
-process.on('SIGTERM', () => {
-  logger.info('SIGTERM signal received.');
-  if (server) {
-    server.close();
-  }
-});
+// process.on('SIGTERM', () => {
+//   logger.info('SIGTERM signal received.');
+//   if (server) {
+//     server.close();
+//   }
+// });

@@ -4,6 +4,8 @@ import { IGenericErrorMessage } from '../interfaces/global.interfaces';
 import { handleValidationError } from '../errors/handleValidationError';
 import ApiError from './ApiError';
 import { errorLogger } from '../../utils/winston/logger';
+import { handleZodSchemaError } from '../errors/handleZodSchemaError';
+import { ZodError } from 'zod';
 
 const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-expressions
@@ -17,10 +19,14 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
 
   if (error?.name === 'ValidationError') {
     const simplifiedError = handleValidationError(error);
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    (statusCode = simplifiedError.statusCode),
-      (message = simplifiedError.message),
-      (errorMessages = simplifiedError.errorMessage);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errorMessages = simplifiedError.errorMessage;
+  } else if (error instanceof ZodError) {
+    const simplifiedError = handleZodSchemaError(error);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errorMessages = simplifiedError.errorMessage;
   } else if (error instanceof ApiError) {
     statusCode = error.statusCode;
     message = error.message;
