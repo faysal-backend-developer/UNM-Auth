@@ -8,6 +8,7 @@ import {
   SemesterCode,
   SemesterTitle,
 } from './AcademicSemester.contant';
+import ApiError from '../../globalErrorHandler/ApiError';
 
 const academicSemesterSchema = new Schema<IAcademicSemester>(
   {
@@ -42,6 +43,19 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
     collection: 'Academic Semester',
   },
 );
+
+academicSemesterSchema.pre('save', async function (next) {
+  const isExist = await academicSemester.findOne({
+    title: this.title,
+    year: this.year,
+  });
+
+  if (isExist) {
+    throw new ApiError(409, 'Conflicting data');
+  }
+
+  next();
+});
 
 export const academicSemester = model<
   IAcademicSemester,
