@@ -3,7 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import rootRouter from './app/modules/routers';
 import globalErrorHandler from './app/globalErrorHandler/globalErrorHandler';
-// import { findLastUserId } from './app/modules/Users/Users.utils';
+import { StatusCodes } from 'http-status-codes';
 
 // Create app
 const app = express();
@@ -39,6 +39,22 @@ app.get(
 
 // Global Error Handler
 app.use(globalErrorHandler);
+
+// !! Some Error Find , I can't solve this problem
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.status(StatusCodes.NOT_FOUND).json({
+    success: false,
+    message: 'This Api Endpoint is not available',
+    errorMessage: [
+      {
+        path: req.originalUrl,
+        message: 'This Api Endpoint is not available',
+      },
+    ],
+  });
+});
 
 // Export App
 export default app;

@@ -3,7 +3,7 @@ import {
   MonthEnum,
   SemesterCode,
   SemesterTitle,
-} from './AcademicSemester.contant';
+} from './AcademicSemester.constant';
 
 const academicSemesterZodSchema = z.object({
   body: z.object({

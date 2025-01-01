@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { ErrorRequestHandler } from 'express';
 import config from '../../config';
 import { IGenericErrorMessage } from '../interfaces/global.interfaces';
@@ -8,7 +10,6 @@ import { handleZodSchemaError } from '../errors/handleZodSchemaError';
 import { ZodError } from 'zod';
 
 const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
   config.node_env === 'development'
     ? console.log(` Global Error Handler : ${error}`)
     : errorLogger.error(`Global Error Handler : ${error}`);
@@ -39,7 +40,6 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
         ]
       : [];
   } else if (error instanceof Error) {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     (statusCode = 500),
       (message = error?.message || 'Internal Server Error'),
       (errorMessages = error?.message
@@ -58,7 +58,8 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
     errorMessage: errorMessages,
     stack: config.node_env === 'development' ? error.stack : undefined,
   });
-  next();
+  // next()
+  // ! when we use next() instead of next on the same node  find some Error Report : Cannot set headers after they are sent to the client
 };
 
 export default globalErrorHandler;
