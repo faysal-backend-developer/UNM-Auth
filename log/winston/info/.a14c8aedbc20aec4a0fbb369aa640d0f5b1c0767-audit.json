@@ -74,6 +74,36 @@
             "date": 1735546344605,
             "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2024-12-30-14.log",
             "hash": "b92127887daed715486a403dacc4fb53f724d70234ab4592db2b061d78256c9a"
+        },
+        {
+            "date": 1735606962910,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2024-12-31-07.log",
+            "hash": "09885ccc37b419e4c5780739f025a1082a3746b512ef99bcf78ba093193cd761"
+        },
+        {
+            "date": 1735627291673,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2024-12-31-12.log",
+            "hash": "00e6fa9ea7ef9c2f01561e342a2bc20124d144426bc67d86fb350a9c5d8a06f0"
+        },
+        {
+            "date": 1735631370865,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2024-12-31-13.log",
+            "hash": "200b8393db0ddc529c8472817a78ab2812d4574c73c0735d6161d445b5f83075"
+        },
+        {
+            "date": 1735655070755,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2024-12-31-20.log",
+            "hash": "fc6cc32e48cbf5384af264d8aa2ab88ee2ff8ae85d8dac14a693ef47e7cf5e10"
+        },
+        {
+            "date": 1735657207870,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2024-12-31-21.log",
+            "hash": "bef0ea23c5545bea4ee294d40099f35e0d2c446dc38f742dedbfecc62301848e"
+        },
+        {
+            "date": 1735705224124,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2025-01-01-10.log",
+            "hash": "658bd8dcf9261fb74dcba523a314d0fd7b8edac15e781c3d604c2b84ddd8d34a"
         }
     ],
     "hashType": "sha256"
