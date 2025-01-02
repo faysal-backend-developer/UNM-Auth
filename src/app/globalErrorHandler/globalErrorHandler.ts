@@ -8,6 +8,7 @@ import ApiError from './ApiError';
 import { errorLogger } from '../../utils/winston/logger';
 import { handleZodSchemaError } from '../errors/handleZodSchemaError';
 import { ZodError } from 'zod';
+import handleCastError from '../errors/handleCastError';
 
 const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   config.node_env === 'development'
@@ -39,6 +40,11 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
           },
         ]
       : [];
+  } else if (error.name == 'CastError') {
+    const simplifiedError = handleCastError(error);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errorMessages = simplifiedError?.errorMessage;
   } else if (error instanceof Error) {
     (statusCode = 500),
       (message = error?.message || 'Internal Server Error'),

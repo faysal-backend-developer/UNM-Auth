@@ -27,17 +27,27 @@ const academicSemesterZodSchema = z.object({
   }),
 });
 
-const updateAcademicSemesterZodSchema = z.object({
-  body: z.object({
-    semester: z.object({
-      title: z.enum([...SemesterTitle] as [string, ...string[]]).optional(),
-      year: z.string().optional(),
-      code: z.enum([...SemesterCode] as [string, ...string[]]).optional(),
-      startMonth: z.enum([...MonthEnum] as [string, ...string[]]).optional(),
-      endMonth: z.enum([...MonthEnum] as [string, ...string[]]).optional(),
+const updateAcademicSemesterZodSchema = z
+  .object({
+    body: z.object({
+      semester: z.object({
+        title: z.enum([...SemesterTitle] as [string, ...string[]]).optional(),
+        year: z.string().optional(),
+        code: z.enum([...SemesterCode] as [string, ...string[]]).optional(),
+        startMonth: z.enum([...MonthEnum] as [string, ...string[]]).optional(),
+        endMonth: z.enum([...MonthEnum] as [string, ...string[]]).optional(),
+      }),
     }),
-  }),
-});
+  })
+  .refine(
+    (data) =>
+      (data?.body.semester.title && data?.body.semester.code) ||
+      (!data?.body.semester.title && !data?.body.semester.code),
+    {
+      message:
+        'Either both title and code are required, neither title and code are not required',
+    },
+  );
 
 export const AcademicSemesterValidation = {
   academicSemesterZodSchema,

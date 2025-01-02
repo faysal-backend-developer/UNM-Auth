@@ -159,6 +159,21 @@
             "date": 1735830002664,
             "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/UNM-2025-01-02-21.log",
             "hash": "a9e9355d3e84d18fb708fd1d7a8984a3d07b10ff40b174780f55a30b09e0c9fb"
+        },
+        {
+            "date": 1735834118474,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/UNM-2025-01-02-22.log",
+            "hash": "78d9c8c904b87aed83044fe6ed6d60f9128cf79742c48f386536a4a04ecd0b1b"
+        },
+        {
+            "date": 1735838064960,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/UNM-2025-01-02-23.log",
+            "hash": "3f15f8e01320eaf34e1658892fdc846462e198eb168621a92418beee323878f3"
+        },
+        {
+            "date": 1735840804054,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/error/UNM-2025-01-03-00.log",
+            "hash": "eb9502a3aa8fbb30021c4d53846f22d23f0146f456f0ca29e04d5d694d498c11"
         }
     ],
     "hashType": "sha256"
