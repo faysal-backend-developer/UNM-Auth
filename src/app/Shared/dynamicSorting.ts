@@ -6,7 +6,9 @@ export const buildSortObject = (
   if (sortBy) {
     return { [sortBy]: validSortOrder };
   }
-  return {}; // Return empty object if no sorting is needed
+  return {
+    createdAt: -1,
+  }; // Return empty object if no sorting is needed
 };
 
-// TODO : My Formula for Dynamic Sorting :: Using a custom sorting function
+// STUB : My Formula for Dynamic Sorting :: Using a custom sorting function

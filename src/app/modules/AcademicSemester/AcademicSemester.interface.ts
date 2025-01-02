@@ -19,10 +19,16 @@ export type ISemesterCode = '01' | '02' | '03';
 
 export type IAcademicSemester = {
   title: 'Autumn' | 'Summer' | 'Fall';
-  year: number;
+  year: string;
   code: '01' | '02' | '03';
   startMonth: MonthName;
   endMonth: MonthName;
 };
 
 export type IAcademicSemesterModel = Model<IAcademicSemester>;
+
+export type IFilterableField = {
+  searchTerm?: string;
+  year?: string;
+  title?: string;
+};
