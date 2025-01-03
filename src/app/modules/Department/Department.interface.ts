@@ -1,5 +1,5 @@
 import { Model } from 'mongoose';
-import { IFaculty } from '../Faculty/Faculty.interface';
+import { IFaculty } from '../Faculty/AcademicFaculty.interface';
 
 export type IDepartment = {
   title: string;

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const facultyZodValidation = z.object({
+const academicFacultyZodValidation = z.object({
   body: z.object({
     faculty: z.object({
       title: z.string({
@@ -10,6 +10,6 @@ const facultyZodValidation = z.object({
   }),
 });
 
-export const FacultyZodValidation = {
-  facultyZodValidation,
+export const AcademicFacultyZodValidation = {
+  academicFacultyZodValidation,
 };

@@ -1,39 +1,39 @@
 import { Request, Response } from 'express';
 import catchAsync from '../../Shared/catchAsync';
-import { FacultyService } from './Faculty.service';
+import { AcademicFacultyService } from './AcademicFaculty.service';
 import sendResponse from '../../Shared/requestHandler';
 import { StatusCodes } from 'http-status-codes';
 import pick from '../../Shared/pick';
 
-const createFaculty = catchAsync(
+const createAcademicFaculty = catchAsync(
   async (req: Request, res: Response): Promise<void> => {
     const { faculty } = req.body;
-    const result = await FacultyService.createFaculty(faculty);
+    const result = await AcademicFacultyService.createAcademicFaculty(faculty);
 
     sendResponse(res, {
       statusCode: StatusCodes.OK,
       success: true,
-      message: 'Faculty created successfully',
+      message: 'Academic Faculty created successfully',
       data: result,
     });
   },
 );
 
-const getSingleFaculty = catchAsync(
+const getSingleAcademicFaculty = catchAsync(
   async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
-    const result = await FacultyService.getSingleFaculty(id);
+    const result = await AcademicFacultyService.getSingleAcademicFaculty(id);
 
     sendResponse(res, {
       statusCode: StatusCodes.OK,
       success: true,
-      message: 'Faculty retrieved successfully',
+      message: 'Academic Faculty retrieved successfully',
       data: result,
     });
   },
 );
 
-const getAllFaculty = catchAsync(
+const getAllAcademicFaculty = catchAsync(
   async (req: Request, res: Response): Promise<void> => {
     const paginationOptions = pick(req.query, [
       'page',
@@ -42,7 +42,7 @@ const getAllFaculty = catchAsync(
       'sortOrder',
     ]);
     const searchOptions = pick(req.query, ['searchTerm']);
-    const result = await FacultyService.getAllFaculty(
+    const result = await AcademicFacultyService.getAllAcademicFaculty(
       paginationOptions,
       searchOptions,
     );
@@ -50,44 +50,47 @@ const getAllFaculty = catchAsync(
     sendResponse(res, {
       statusCode: StatusCodes.OK,
       success: true,
-      message: 'Faculty retrieved successfully',
+      message: 'Academic Faculty retrieved successfully',
       data: result.data,
       meta: result.meta,
     });
   },
 );
 
-const updateFaculty = catchAsync(
+const updateAcademicFaculty = catchAsync(
   async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
     const { faculty } = req.body;
-    const result = await FacultyService.updateFaculty(id, faculty);
+    const result = await AcademicFacultyService.updateAcademicFaculty(
+      id,
+      faculty,
+    );
 
     sendResponse(res, {
       statusCode: StatusCodes.OK,
       success: true,
-      message: 'Faculty updated successfully',
+      message: 'Academic Faculty updated successfully',
       data: result,
     });
   },
 );
 
-const deleteFaculty = catchAsync(
+const deleteAcademicFaculty = catchAsync(
   async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
-    const result = await FacultyService.deleteFaculty(id);
+    const result = await AcademicFacultyService.deleteAcademicFaculty(id);
     sendResponse(res, {
       statusCode: StatusCodes.OK,
       success: true,
-      message: 'Faculty deleted successfully',
+      message: 'Academic Faculty deleted successfully',
       data: result,
     });
   },
 );
-export const FacultyController = {
-  createFaculty,
-  getSingleFaculty,
-  getAllFaculty,
-  updateFaculty,
-  deleteFaculty,
+export const AcademicFacultyController = {
+  createAcademicFaculty,
+  getSingleAcademicFaculty,
+  getAllAcademicFaculty,
+  updateAcademicFaculty,
+  deleteAcademicFaculty,
 };

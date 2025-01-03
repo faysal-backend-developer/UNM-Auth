@@ -1,4 +1,4 @@
-export type IFaculty = {
+export type IAcademicFaculty = {
   title: string;
 };
 
