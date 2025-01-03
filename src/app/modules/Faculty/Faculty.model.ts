@@ -11,6 +11,9 @@ const facultySchema = new Schema<IFaculty>(
   {
     timestamps: true,
     collection: 'Faculty',
+    toJSON: {
+      virtuals: true,
+    },
   },
 );
 

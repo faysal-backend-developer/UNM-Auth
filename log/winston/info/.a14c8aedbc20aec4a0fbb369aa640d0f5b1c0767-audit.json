@@ -174,6 +174,16 @@
             "date": 1735840804046,
             "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2025-01-03-00.log",
             "hash": "4bc9aa0d577d305206eca9dba3885efc0fade65e869bc3d1a73d2d813a68d409"
+        },
+        {
+            "date": 1735881471164,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2025-01-03-11.log",
+            "hash": "f1d6606939b553909f2ce76ccf8fdfd5af5d55765460a2387d39fe0dfa6ed1ea"
+        },
+        {
+            "date": 1735884240431,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2025-01-03-12.log",
+            "hash": "6f1a6a2544de29036409097081b3833a646b45ad7d95990063183034037a3585"
         }
     ],
     "hashType": "sha256"
