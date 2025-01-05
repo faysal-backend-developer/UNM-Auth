@@ -1,23 +1,23 @@
-import { NextFunction, Request, Response } from 'express';
+import { Request, Response } from 'express';
 import { userService } from './Users.service';
 import catchAsync from '../../Shared/catchAsync';
 import sendResponse from '../../Shared/requestHandler';
 import { StatusCodes } from 'http-status-codes';
+import { IUser } from './Users.interface';
 
-const createUser = catchAsync(
-  async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    const { user } = req.body;
-    const result = await userService.createUser(user);
-    sendResponse(res, {
+const createStudent = catchAsync(
+  async (req: Request, res: Response): Promise<void> => {
+    const { student, ...userData } = req.body;
+    const result = await userService.createStudent(student, userData);
+    sendResponse<IUser | null>(res, {
       statusCode: StatusCodes.OK,
-      message: 'User created successfully',
+      message: 'Student created successfully',
       success: true,
       data: result,
     });
-    next();
   },
 );
 
 export const userController = {
-  createUser,
+  createStudent,
 };

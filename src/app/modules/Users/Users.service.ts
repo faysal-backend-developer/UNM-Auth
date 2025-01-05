@@ -2,25 +2,76 @@ import { StatusCodes } from 'http-status-codes';
 import config from '../../../config';
 import ApiError from '../../globalErrorHandler/ApiError';
 import { IUser } from './Users.interface';
+import { IStudent } from '../Student/Student.interface';
+import { generatedStudentId } from './Users.utils';
+import { academicSemester } from '../AcademicSemester/AcademicSemester.model';
+import mongoose from 'mongoose';
+import { student } from '../Student/Student.model';
 import { User } from './Users.model';
-import { generatedUserId } from './Users.utils';
 
-const createUser = async (payload: IUser): Promise<IUser | null> => {
-  if (!payload.password) {
-    payload.password = config.default_user_password!;
+const createStudent = async (
+  studentData: IStudent,
+  userData: Partial<IUser>,
+) => {
+  if (!userData.password) {
+    userData.password = config.default_Student_password!;
+  }
+  userData.role = 'student';
+  const academicSemesterId = await academicSemester.findById({
+    _id: studentData.academicSemester,
+  });
+
+  if (!academicSemesterId) {
+    throw new ApiError(
+      StatusCodes.NOT_FOUND,
+      'Academic Semester not Founded, Please Enter Valid Academic Semester',
+    );
   }
 
-  payload.id = await generatedUserId(payload.role);
+  const session = await mongoose.startSession();
 
-  const createdUser = await User.create(payload);
+  let allUserData = null;
+  try {
+    session.startTransaction();
+    // FIXME - Error Find Transaction and Rollback
+    const id = await generatedStudentId(academicSemesterId);
+    userData.id = id;
+    studentData.id = id;
+    const createStudent = await student.create([studentData], { session });
 
-  if (!createdUser) {
-    throw new ApiError(StatusCodes.BAD_REQUEST, 'User creation failed');
+    if (!createStudent.length) {
+      throw new ApiError(StatusCodes.BAD_REQUEST, "Couldn't create student");
+    }
+
+    allUserData = createStudent[0];
+    userData.student = createStudent[0]._id;
+    const createUser = await User.create([userData], { session });
+
+    if (!createUser.length) {
+      throw new ApiError(StatusCodes.BAD_REQUEST, "Couldn't create user");
+    }
+    await session.commitTransaction();
+    await session.endSession();
+  } catch (error) {
+    await session.abortTransaction();
+    await session.endSession();
+    throw error;
   }
 
-  return createdUser;
+  if (allUserData) {
+    allUserData = await User.findOne({ id: allUserData.id }).populate({
+      path: 'student',
+      populate: [
+        { path: 'academicSemester' },
+        { path: 'academicDepartment' },
+        { path: 'academicFaculty' },
+      ],
+    });
+  }
+
+  return allUserData;
 };
 
 export const userService = {
-  createUser,
+  createStudent,
 };

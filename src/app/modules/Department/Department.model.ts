@@ -7,14 +7,15 @@ const departmentSchema = new Schema<IDepartment>(
       type: String,
       required: true,
     },
-    faculty: {
+    academicFaculty: {
       type: Schema.Types.ObjectId,
-      ref: 'Faculty',
+      ref: 'AcademicFaculty',
       required: true,
     },
   },
   {
     timestamps: true,
+    collection: 'Academic Department',
     toJSON: {
       virtuals: true,
     },

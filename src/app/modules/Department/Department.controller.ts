@@ -4,6 +4,7 @@ import { DepartmentService } from './Department.service';
 import sendResponse from '../../Shared/requestHandler';
 import { StatusCodes } from 'http-status-codes';
 import pick from '../../Shared/pick';
+import { IDepartment } from './Department.interface';
 
 const createDepartment = catchAsync(
   async (req: Request, res: Response): Promise<void> => {
@@ -11,7 +12,7 @@ const createDepartment = catchAsync(
 
     const result = await DepartmentService.createDepartment(department);
 
-    sendResponse(res, {
+    sendResponse<IDepartment | null>(res, {
       statusCode: StatusCodes.OK,
       message: 'Department created successfully',
       success: true,
@@ -24,7 +25,7 @@ const readSingleDepartment = catchAsync(
   async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
     const result = await DepartmentService.readSingleDepartment(id);
-    sendResponse(res, {
+    sendResponse<IDepartment | null>(res, {
       statusCode: StatusCodes.OK,
       message: 'Department read successfully',
       success: true,
@@ -38,7 +39,7 @@ const updateDepartment = catchAsync(
     const { id } = req.params;
     const { department } = req.body;
     const result = await DepartmentService.updateDepartment(id, department);
-    sendResponse(res, {
+    sendResponse<IDepartment | null>(res, {
       statusCode: StatusCodes.OK,
       message: 'Department updated successfully',
       success: true,
@@ -52,7 +53,7 @@ const deleteDepartment = catchAsync(
     const { id } = req.params;
     const result = await DepartmentService.deleteDepartment(id);
 
-    sendResponse(res, {
+    sendResponse<IDepartment | null>(res, {
       statusCode: StatusCodes.OK,
       message: 'Department deleted successfully',
       success: true,
@@ -75,7 +76,7 @@ const readDepartment = catchAsync(
       paginationOptions,
       searchOptions,
     );
-    sendResponse(res, {
+    sendResponse<IDepartment[] | null>(res, {
       statusCode: StatusCodes.OK,
       message: 'Departments read successfully',
       success: true,

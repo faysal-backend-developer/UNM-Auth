@@ -10,7 +10,7 @@ const academicFacultySchema = new Schema<IAcademicFaculty>(
   },
   {
     timestamps: true,
-    collection: 'AcademicFaculty',
+    collection: 'Academic Faculty',
     toJSON: {
       virtuals: true,
     },

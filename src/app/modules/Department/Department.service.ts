@@ -10,7 +10,7 @@ const createDepartment = async (
   payload: IDepartment,
 ): Promise<IDepartment | null> => {
   const result = (await department.create(payload)).populate({
-    path: 'faculty',
+    path: 'academicFaculty',
   });
 
   if (!result) {
@@ -24,7 +24,7 @@ const readSingleDepartment = async (
   id: string,
 ): Promise<IDepartment | null> => {
   const result = await department.findById({ _id: id }).populate({
-    path: 'faculty',
+    path: 'academicFaculty',
   });
 
   if (!result) {
@@ -78,7 +78,7 @@ const readDepartment = async (
   const result = await department
     .find(whereCondition)
     .populate({
-      path: 'faculty',
+      path: 'academicFaculty',
     })
     .limit(Number(limit))
     .skip(skip)
@@ -104,7 +104,7 @@ const updateDepartment = async (
   const result = await department
     .findByIdAndUpdate({ _id: id }, payload, { new: true })
     .populate({
-      path: 'faculty',
+      path: 'academicFaculty',
     });
 
   if (!result) {

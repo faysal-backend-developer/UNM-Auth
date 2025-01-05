@@ -4,13 +4,14 @@ import { AcademicFacultyService } from './AcademicFaculty.service';
 import sendResponse from '../../Shared/requestHandler';
 import { StatusCodes } from 'http-status-codes';
 import pick from '../../Shared/pick';
+import { IAcademicFaculty } from './AcademicFaculty.interface';
 
 const createAcademicFaculty = catchAsync(
   async (req: Request, res: Response): Promise<void> => {
     const { faculty } = req.body;
     const result = await AcademicFacultyService.createAcademicFaculty(faculty);
 
-    sendResponse(res, {
+    sendResponse<IAcademicFaculty | null>(res, {
       statusCode: StatusCodes.OK,
       success: true,
       message: 'Academic Faculty created successfully',
@@ -24,7 +25,7 @@ const getSingleAcademicFaculty = catchAsync(
     const { id } = req.params;
     const result = await AcademicFacultyService.getSingleAcademicFaculty(id);
 
-    sendResponse(res, {
+    sendResponse<IAcademicFaculty | null>(res, {
       statusCode: StatusCodes.OK,
       success: true,
       message: 'Academic Faculty retrieved successfully',
@@ -47,7 +48,7 @@ const getAllAcademicFaculty = catchAsync(
       searchOptions,
     );
 
-    sendResponse(res, {
+    sendResponse<IAcademicFaculty[] | null>(res, {
       statusCode: StatusCodes.OK,
       success: true,
       message: 'Academic Faculty retrieved successfully',
@@ -66,7 +67,7 @@ const updateAcademicFaculty = catchAsync(
       faculty,
     );
 
-    sendResponse(res, {
+    sendResponse<IAcademicFaculty | null>(res, {
       statusCode: StatusCodes.OK,
       success: true,
       message: 'Academic Faculty updated successfully',
@@ -79,7 +80,7 @@ const deleteAcademicFaculty = catchAsync(
   async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
     const result = await AcademicFacultyService.deleteAcademicFaculty(id);
-    sendResponse(res, {
+    sendResponse<IAcademicFaculty | null>(res, {
       statusCode: StatusCodes.OK,
       success: true,
       message: 'Academic Faculty deleted successfully',

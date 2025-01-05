@@ -4,6 +4,8 @@ import bodyParser from 'body-parser';
 import rootRouter from './app/modules/routers';
 import globalErrorHandler from './app/globalErrorHandler/globalErrorHandler';
 import { StatusCodes } from 'http-status-codes';
+// import { generatedAdminId } from './app/modules/Users/Users.utils';
+// import { generatedStudentId } from './app/modules/Users/Users.utils';
 
 // Create app
 const app = express();
@@ -29,10 +31,18 @@ app.get('/api/v1/home', (req: Request, res: Response) => {
 app.get(
   '/api/v1/test',
   async (req: Request, res: Response, next: NextFunction) => {
-    res.send('Testing Server Test Request');
-    // Write the Testing Function to the Response
-    // console.log(await findLastUserId())
+    // res.send('Testing Server Test Request');
 
+    // const academicSemester = {
+
+    //   year: "2025",
+    //   code : "01",
+    //   title: "Autumn",
+    //   startMonth: "ja",
+    //   endMonth: "sep"
+    // }
+    // console.log(await generatedStudentId(academicSemester))
+    // console.log(await generatedAdminId())
     next();
   },
 );

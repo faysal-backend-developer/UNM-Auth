@@ -6,6 +6,7 @@ import { StatusCodes } from 'http-status-codes';
 import sendResponse from '../../Shared/requestHandler';
 import { IPaginationOption } from '../../interfaces/paginationOption';
 import pick from '../../Shared/pick';
+import { IAcademicSemester } from './AcademicSemester.interface';
 
 // !: Create Academic Semester
 const create = catchAsync(
@@ -13,7 +14,7 @@ const create = catchAsync(
     const { semester } = req.body;
     const create = await AcademicSemesterService.createSemester(semester);
 
-    sendResponse(res, {
+    sendResponse<IAcademicSemester | null>(res, {
       statusCode: StatusCodes.OK,
       success: true,
       message: 'Semester created successfully',
@@ -40,7 +41,7 @@ const getAllSemester = catchAsync(
       filterableFields,
     );
 
-    sendResponse(res, {
+    sendResponse<IAcademicSemester[] | null>(res, {
       statusCode: StatusCodes.OK,
       success: true,
       message: 'All Semesters Find successfully',
@@ -56,7 +57,7 @@ const getSingleSemester = catchAsync(
     const { id } = req.params;
     const result = await AcademicSemesterService.getSingleSemester(id);
 
-    sendResponse(res, {
+    sendResponse<IAcademicSemester | null>(res, {
       statusCode: StatusCodes.OK,
       success: true,
       message: 'Semester Find successfully',
@@ -75,7 +76,7 @@ const updateAcademicSemester = catchAsync(
       semester,
     );
 
-    sendResponse(res, {
+    sendResponse<IAcademicSemester | null>(res, {
       statusCode: StatusCodes.OK,
       success: true,
       message: 'Semester Update successfully',
@@ -90,7 +91,7 @@ const deleteAcademicSemester = catchAsync(
     const { id } = req.params;
     const result = await AcademicSemesterService.deleteAcademicSemester(id);
 
-    sendResponse(res, {
+    sendResponse<IAcademicSemester | null>(res, {
       statusCode: StatusCodes.OK,
       success: true,
       message: 'Academic Semester Delete successfully',
