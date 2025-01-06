@@ -76,7 +76,6 @@ const updateStudent = async (
   const isExist = await student.findOne({
     id: studentId,
   });
-  console.log(isExist);
   if (!isExist) {
     throw new ApiError(StatusCodes.NO_CONTENT, 'Student not found');
   }
