@@ -229,6 +229,11 @@
             "date": 1736068197994,
             "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2025-01-05-15.log",
             "hash": "309fab91c0781ef006474466439b3a619f4fff3ff9f69b8d81771db6c444ec9e"
+        },
+        {
+            "date": 1736095252303,
+            "name": "/Users/apple/Desktop/project/UNM-Auth/log/winston/info/UNM-2025-01-05-22.log",
+            "hash": "83382e7c89dd0aa9b699c5aa7c2299132024367c9c68e4eb8a721b06c5dd23cd"
         }
     ],
     "hashType": "sha256"

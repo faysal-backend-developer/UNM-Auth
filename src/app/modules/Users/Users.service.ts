@@ -33,7 +33,6 @@ const createStudent = async (
   let allUserData = null;
   try {
     session.startTransaction();
-    // FIXME - Error Find Transaction and Rollback
     const id = await generatedStudentId(academicSemesterId);
     userData.id = id;
     studentData.id = id;

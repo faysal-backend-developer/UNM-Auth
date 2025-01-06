@@ -18,6 +18,50 @@ const getAllStudent = catchAsync(
   },
 );
 
+const getSingleStudent = catchAsync(
+  async (req: Request, res: Response): Promise<void> => {
+    const { id } = req.params;
+    const result = await StudentService.getSingleStudent(id);
+
+    sendResponse<IStudent | null>(res, {
+      statusCode: StatusCodes.OK,
+      success: true,
+      message: 'Student details fetched successfully',
+      data: result,
+    });
+  },
+);
+
+const updateStudent = catchAsync(
+  async (req: Request, res: Response): Promise<void> => {
+    const { id } = req.params;
+    const { ...studentData } = req.body;
+    const result = await StudentService.updateStudent(id, studentData);
+    sendResponse<IStudent | null>(res, {
+      statusCode: StatusCodes.OK,
+      success: true,
+      message: 'Student updated successfully',
+      data: result,
+    });
+  },
+);
+
+const deleteStudent = catchAsync(
+  async (req: Request, res: Response): Promise<void> => {
+    const { id } = req.params;
+    const result = await StudentService.deleteStudent(id);
+    sendResponse<IStudent | null>(res, {
+      statusCode: StatusCodes.OK,
+      success: true,
+      message: 'Student deleted successfully',
+      data: result,
+    });
+  },
+);
+
 export const StudentController = {
   getAllStudent,
+  getSingleStudent,
+  updateStudent,
+  deleteStudent,
 };

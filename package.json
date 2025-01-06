@@ -8,6 +8,7 @@
     "lint:check": "eslint .",
     "format": "yarn prettier . --write",
     "lint:format": "yarn lint:check && yarn format",
+    "build": "tsc",
     "prepare": "husky"
   },
   "lint-staged": {
